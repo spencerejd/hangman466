@@ -15,3 +15,7 @@ _At **minimum**, your README file should contain the following information:_
 **_File structure of the project_**,
 **_License information_**
 
+
+
+Licence information
+Unlicense: This license is used for dedicating works to the public domain, allowing users complete freedom to use, modify, and distribute the code without any restrictions
