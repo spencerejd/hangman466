@@ -9,8 +9,8 @@ def random_word_selector(list_of_words):
     The purpose of this function is to select a random word from the list variable given to the function.
     The word is selected using the random.choice function imported from the random module
     '''
-    fruit = random.choice(favourite_fruit_list)
-    return fruit
+    random_word = random.choice(list_of_words)
+    return random_word
 
 def input_check_func():
     '''
@@ -26,4 +26,4 @@ def input_check_func():
 
 
 print(random_word_selector(favourite_fruit_list))
-print(input_check_func())
+#print(input_check_func())
