@@ -1,4 +1,13 @@
 # Hangman
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Installation instructions](#installation-instructions)
+3. [Usage instructions](#usage-instructions)
+4. [File structure of the project](#file-structure-of-the-project)
+5. [Licence information](#licence-information)
+
+## Introduction
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
 
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
@@ -15,7 +24,11 @@ _At **minimum**, your README file should contain the following information:_
 **_File structure of the project_**,
 **_License information_**
 
+## Installation instructions
 
+## Usage instructions
 
-Licence information
+## File structure of the project
+
+## Licence information
 Unlicense: This license is used for dedicating works to the public domain, allowing users complete freedom to use, modify, and distribute the code without any restrictions
