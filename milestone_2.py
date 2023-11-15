@@ -24,5 +24,6 @@ def input_check_func():
     return input_checker
 
 
+
 print(random_word_selector(favourite_fruit_list))
 print(input_check_func())
