@@ -23,5 +23,6 @@ def input_check_func():
     input_checker = "Good guess" if len(guess) == 1 and guess.isalpha() else "Oops! That's not a valid input"
     return input_checker
 
+
 print(random_word_selector(favourite_fruit_list))
 print(input_check_func())
