@@ -4,6 +4,7 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 
 > Make sure you do the following before you complete this
+
 _You are requested by AiCore to document your experience creating this game by doing the following_
 _Add documentation to your GitHub README file. You can refer to the relevant lesson in the prerequisites for this task for more information._
 _At minimum, your README file should contain the following information:_
