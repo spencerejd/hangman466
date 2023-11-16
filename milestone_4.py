@@ -53,10 +53,10 @@ class Hangman :
             elif guess in self.list_of_guesses :
                 print("You already tried that letter!")
             else :
-                check_guess(guess)
+                self.check_guess(guess)
                 self.list_of_guesses.append(guess)
 
 hangman_game = Hangman(favourite_fruit_list)            #creates an instance of the Hangman class. You CANNOT access methods without creating the instance first
-hangman_game()
+hangman_game.ask_for_input()
 
 # At the moment, it is returning where the function is, not actually the result of the function. You need to figure out how to get it to return your function itself.
