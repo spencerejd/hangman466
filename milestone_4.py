@@ -56,8 +56,7 @@ class Hangman :
                 check_guess(guess)
                 self.list_of_guesses.append(guess)
 
-
-Hangman.ask_for_input(favourite_fruit_list)
-
+hangman_game = Hangman(favourite_fruit_list)            #creates an instance of the Hangman class. You CANNOT access methods without creating the instance first
+hangman_game()
 
 # At the moment, it is returning where the function is, not actually the result of the function. You need to figure out how to get it to return your function itself.
