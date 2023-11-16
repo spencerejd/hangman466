@@ -1,6 +1,8 @@
 
 import random
 
+favourite_fruit_list = ['Banana', 'Easy Peelers', 'Tomato', 'Grape', 'Honeydew melon']
+
 class Hangman :
     # class constructor
     def __init__(self, word_list, num_lives = 5):
@@ -21,7 +23,22 @@ class Hangman :
         self.list_of_guesses = []
 
     
-    def ask_for_input(list_of_words) :
+    def check_guess(self, guess) :
+        '''
+        This function checks if a guessed character is found in a word
+
+        The purpose of this function is to complete a check on whether the character that is guessed is 
+        located in the word that is given. The lower() method is applied to all parameters given for 
+        the purpose of the check.
+        '''
+        guess = guess.lower()
+        random_word = self.word.lower()
+
+        checked_guess_feedback = f"Good guess! {guess} is in the word." if guess in random_word else f"Sorry, {guess} is not in the word. Try again."
+        print(checked_guess_feedback)
+
+    
+    def ask_for_input(self) :
         '''
         This function asks for a character input to compare with a random word
 
@@ -29,11 +46,18 @@ class Hangman :
         The user is also asked to provide a single alphabetical character input and the check_guess 
         function is called with the input and randomly selected word as variables.
         '''
-        
         while True :
             guess = input('Please guess a single letter: ')
-            if len(guess) == 1 and guess.isalpha() :
-                break
-            print("Invalid letter. Please, enter a single alphabetical character.")
+            if not len(guess) == 1 and guess.isalpha() :
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses :
+                print("You already tried that letter!")
+            else :
+                check_guess(guess)
+                self.list_of_guesses.append(guess)
 
-check_guess(guess, random_word)
+
+Hangman.ask_for_input(favourite_fruit_list)
+
+
+# At the moment, it is returning where the function is, not actually the result of the function. You need to figure out how to get it to return your function itself.
