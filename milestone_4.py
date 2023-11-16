@@ -6,21 +6,19 @@ class Hangman :
     def __init__(self, word_list, num_lives = 5):
         
         #attributes
-        self.word = ''
-        self.word_guessed = [''] * len(self.word)       #   I suspect this needs additional functionality to take in the word that is guessed and replace the '_'. Index?
-        self.num_letters =                  #TODO I suspect the above needs to be nailed on to calculate this correctly
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_'] * len(self.word)
+        self.num_letters = len([unique_letter for unique_letter in set(list(self.word) + self.word_guessed) if unique_letter.isalpha()])           #TODO I suspect the above needs to be nailed on to calculate this correctly
+                            # 1. convert the random word into a list of each string - list(self.word)
+                            # 2. we should now have two lists, i.e one is list(self.word) ['f','r','u','i','t'] and the other is self.word_guessed ['_','_','_','_','_',]
+                            # 3. now let's combine them to give us a single list that is unique and contains just alphabetical characters
+                            # 4. uniquemerged_set = set(list(self.word) + self.word_guessed)
+                            # 5. however, word_guessed contains special characters, you will need to filter this out
+                            # 6. uniquemerged_set = [unique_letter for unique_letter in set(list(self.word) + self.word_guessed) if unique_letter.isalpha()]
+                            # 7. and this should produce a list of unique letters that have not been guessed yet! Add the len function and we have what we're after!
         self.num_lives = num_lives
         self.word_list = word_list
         self.list_of_guesses = []
-
-    def random_word_selector(self):
-        '''
-        This function selects a random word from a given list of words
-
-        The purpose of this function is to select a random word from the list variable given to the function.
-        The word is selected using the random.choice function imported from the random module
-        '''
-        return random.choice(self.word_list)
 
     
     def ask_for_input(list_of_words) :
@@ -33,8 +31,9 @@ class Hangman :
         '''
         
         while True :
-        guess = input('Please guess a single letter: ')
-        if len(guess) == 1 and guess.isalpha() :
-            break
-        print("Invalid letter. Please, enter a single alphabetical character.")
-    check_guess(guess, random_word)
+            guess = input('Please guess a single letter: ')
+            if len(guess) == 1 and guess.isalpha() :
+                break
+            print("Invalid letter. Please, enter a single alphabetical character.")
+
+check_guess(guess, random_word)
