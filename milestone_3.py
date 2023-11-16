@@ -2,6 +2,16 @@ import random
 
 favourite_fruit_list = ['Banana', 'Easy Peelers', 'Tomato', 'Grape', 'Honeydew melon']
 
+def random_word_selector(list_of_words):
+    '''
+    This function selects a random word from a given list of words
+
+    The purpose of this function is to select a random word from the list variable given to the function.
+    The word is selected using the random.choice function imported from the random module
+    '''
+    random_word = random.choice(list_of_words)
+    return random_word
+
 def ask_for_input(list_of_words) :
     '''
     This function asks for a character input to compare with a random word
@@ -10,7 +20,8 @@ def ask_for_input(list_of_words) :
     The user is also asked to provide a single alphabetical character input and the check_guess 
     function is called with the input and randomly selected word as variables.
     '''
-    random_word = random.choice(list_of_words)
+    random_word = random_word_selector(list_of_words)
+    print(random_word)
 
     while True :
         guess = input('Please guess a single letter: ')
@@ -31,13 +42,17 @@ def check_guess(guess, random_word) :
     guess = guess.lower()
     random_word = random_word.lower()
 
-    if guess in random_word :
-        print(f"Good guess! {guess} is in the word.")
-        print(random_word)
-    else :
-        print(f"Sorry, {guess} is not in the word. Try again.")
-        print(random_word)
+    checked_guess_feedback = f"Good guess! {guess} is in the word." if guess in random_word else f"Sorry, {guess} is not in the word. Try again."
+    print(checked_guess_feedback)
 
+
+#    if guess in random_word :
+#        print(f"Good guess! {guess} is in the word.")
+#        print(random_word)
+#    else :
+#        print(f"Sorry, {guess} is not in the word. Try again.")
+#        print(random_word)
 
 ask_for_input(favourite_fruit_list)
+
 
