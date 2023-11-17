@@ -9,7 +9,7 @@ class Hangman :
         
         #attributes
         self.word = random.choice(word_list)
-        self.word_guessed = ['_'] * len(self.word)
+        self.word_guessed = ['_'] * len(self.word.replace(" ", ""))
         self.num_letters = len([unique_letter for unique_letter in set(list(self.word) + self.word_guessed) if unique_letter.isalpha()])           #TODO I suspect the above needs to be nailed on to calculate this correctly
                             # 1. convert the random word into a list of each string - list(self.word)
                             # 2. we should now have two lists, i.e one is list(self.word) ['f','r','u','i','t'] and the other is self.word_guessed ['_','_','_','_','_',]
@@ -33,15 +33,24 @@ class Hangman :
         '''
         guess = guess.lower()
         random_word = self.word.lower()
+        random_word_no_spaces = random_word.replace(" ","")
 
-        checked_guess_feedback = f"Good guess! {guess} is in the word." if guess in random_word else f"Sorry, {guess} is not in the word. Try again."
-        print(checked_guess_feedback)
+        if guess in random_word :
+            print(f"Good guess! {guess} is in the word.")
 
-        for idx, letter in enumerate(random_word) :
-            if letter == guess :
-                self.word_guessed[idx] = guess
-        self.num_letters -= 1
+            for idx, letter in enumerate(random_word_no_spaces) :
+                if letter == guess :
+                    self.word_guessed[idx] = guess
 
+            self.num_letters -= 1
+            print("Hangman:", self.word_guessed)
+
+        else :
+            self.num_lives -= 1
+            print(f"Sorry, {guess} is not in the word. Try again.")
+            print(f"You have {self.num_lives} lives left.")
+
+        print("Number of unique letters remaining in word:",self.num_letters)
 
     
     def ask_for_input(self) :
@@ -53,14 +62,16 @@ class Hangman :
         function is called with the input and randomly selected word as variables.
         '''
         while True :
+            print("New Round")
             guess = input('Please guess a single letter: ')
-            if not len(guess) == 1 and guess.isalpha() :
+            if len(guess) != 1 or not guess.isalpha() :
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses :
                 print("You already tried that letter!")
             else :
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
+                #print("Your list of guesses:",self.list_of_guesses)
 
 hangman_game = Hangman(favourite_fruit_list)            #creates an instance of the Hangman class. You CANNOT access methods without creating the instance first
 hangman_game.ask_for_input()
