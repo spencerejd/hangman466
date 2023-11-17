@@ -23,7 +23,7 @@ class Hangman :
         self.list_of_guesses = []
 
     
-    def check_guess(self, guess) :
+    def _check_guess_(self, guess) :
         '''
         This function checks if a guessed character is found in a word
 
