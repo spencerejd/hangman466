@@ -37,6 +37,12 @@ class Hangman :
         checked_guess_feedback = f"Good guess! {guess} is in the word." if guess in random_word else f"Sorry, {guess} is not in the word. Try again."
         print(checked_guess_feedback)
 
+        for idx, letter in enumerate(random_word) :
+            if letter == guess :
+                self.word_guessed[idx] = guess
+        self.num_letters -= 1
+
+
     
     def ask_for_input(self) :
         '''
