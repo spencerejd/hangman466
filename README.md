@@ -31,6 +31,7 @@ Continue guessing until you either guess the word or run out of lives.
 
 ## File structure of the project
 The project is structured as follows:
+
 `hangman_game.py`: The main Python script containing the implementation of the Hangman game. The script initialises the game, checks guesses and handles user input.
 
 `README.md`: Documentation file providing information about the Hangman game.
