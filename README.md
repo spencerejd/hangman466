@@ -37,12 +37,19 @@ The project is structured as follows:
 
 hangman466/
 │
+
 ├── hangman_game.py
+
 ├── hangman_test/
+
 │   └── hangman_Template.py
+
 │   └── milestone_2.py
+
 │   └── milestone_3.py
+
 │   └── milestone_4.py
+
 └── README.md
 
 
