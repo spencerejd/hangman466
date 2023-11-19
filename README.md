@@ -35,15 +35,15 @@ The project is structured as follows:
 `README.md`: Documentation file providing information about the Hangman game.
 `hangman_test`: Directory containing files that show the development process and commit history of the Hangman game development.
 
->hangman466/
->│
->├── hangman_game.py
->├── hangman_test/
->│   └── hangman_Template.py
->│   └── milestone_2.py
->│   └── milestone_3.py
->│   └── milestone_4.py
->└── README.md
+hangman466/
+│
+├── hangman_game.py
+├── hangman_test/
+│   └── hangman_Template.py
+│   └── milestone_2.py
+│   └── milestone_3.py
+│   └── milestone_4.py
+└── README.md
 
 
 
