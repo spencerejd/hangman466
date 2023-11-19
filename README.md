@@ -12,23 +12,13 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 
 This is an implementation of the Hangman game, where the computer thinks of a word from a provided list and the user tries to guess it. 
 
-> Make sure you do the following before you complete this project.
-_You are requested by AiCore to document your experience creating this game by doing the following_
-_Add documentation to your GitHub README file. You can refer to the relevant lesson in the prerequisites for this task for more information._
-_At **minimum**, your README file should contain the following information:_
-
-**_Installation instructions_**,
-**_Usage instructions_**,
-**_File structure of the project_**,
-**_License information_**
-
 ## Installation instructions
 1. Clone the repository:
 `git clone https://github.com/spencerejd/hangman466.git`
 2. Navigate to the project directory:
 `cd hangman466`
 3. Run the game:
-`python hangman.py`
+`python hangman_game.py`
 
 
 ## Usage instructions
@@ -40,14 +30,20 @@ The game will inform you if the letter is in the word or not.
 Continue guessing until you either guess the word or run out of lives.
 
 ## File structure of the project
-The project is structured as follows
+The project is structured as follows:
+`hangman_game.py`: The main Python script containing the implementation of the Hangman game. The script initialises the game, checks guesses and handles user input.
+`README.md`: Documentation file providing information about the Hangman game.
+`hangman_test`: Directory containing files that show the development process and commit history of the Hangman game development.
 
-hangman-game/
-│
-├── hangman.py
-├── tests/
-│   └── test_hangman.py
-└── README.md
+>hangman466/
+>│
+>├── hangman_game.py
+>├── hangman_test/
+>│   └── hangman_Template.py
+>│   └── milestone_2.py
+>│   └── milestone_3.py
+>│   └── milestone_4.py
+>└── README.md
 
 
 
